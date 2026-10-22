@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Info, Download, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Info, ArrowUpRight } from 'lucide-react';
 import { useToast } from '../../context/ToastContext';
 import { api } from '../../services/api';
 
@@ -32,10 +32,6 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
     }
   };
 
-  const handleInstallApp = () => {
-    showToast('Application is ready for offline PWA installation.');
-  };
-
   const handleSignOut = async () => {
     try {
       await api.signOut();
@@ -49,7 +45,6 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Land & Legal', path: '/land-legal' },
-    { name: 'Login AI', path: '/login-ai' },
     { name: 'AI Search', path: '/ai-search' },
   ];
 
@@ -157,14 +152,6 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
               title="System Information"
             >
               <Info className="w-4 h-4" />
-            </button>
-
-            <button
-              onClick={handleInstallApp}
-              className="border border-zinc-300 hover:border-zinc-400 rounded-lg px-3 py-1.5 text-xs font-medium text-zinc-800 flex items-center gap-1.5 hover:bg-zinc-50 transition-colors shadow-2xs"
-            >
-              <Download className="w-3.5 h-3.5 text-zinc-600" />
-              <span>Install App</span>
             </button>
           </div>
         </header>

@@ -37,29 +37,28 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({ docume
   return (
     <div className="fixed inset-0 z-50 bg-[#2b2b2b] flex flex-col animate-in fade-in duration-150">
       {/* Top Dark Bar */}
-      <div className="h-12 bg-[#1e1e1e] border-b border-[#333] px-4 flex items-center justify-between text-zinc-300 select-none">
-        {/* Left: Menu & Filename */}
-        <div className="flex items-center gap-3">
-          <Menu className="w-4 h-4 text-zinc-400 hover:text-white cursor-pointer" />
-          <span className="text-xs font-mono text-zinc-200 truncate max-w-sm">
+      <div className="h-12 bg-[#1e1e1e] border-b border-[#333] px-3 sm:px-4 flex items-center justify-between text-zinc-300 select-none overflow-x-auto gap-2">
+        {/* Left: Filename */}
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="text-xs font-mono text-zinc-200 truncate max-w-[120px] sm:max-w-xs">
             {document.original_filename || `doc-${document.id}.pdf`}
           </span>
         </div>
 
         {/* Center: Pagination & Zoom */}
-        <div className="flex items-center gap-4 text-xs">
-          <div className="flex items-center gap-1.5 bg-[#2b2b2b] px-2.5 py-1 rounded border border-[#3e3e3e]">
+        <div className="flex items-center gap-2 sm:gap-3 text-xs shrink-0">
+          <div className="flex items-center gap-1 bg-[#2b2b2b] px-2 py-0.5 rounded border border-[#3e3e3e]">
             <input
               type="text"
               value={page}
               onChange={(e) => setPage(Math.max(1, Math.min(totalPages, parseInt(e.target.value) || 1)))}
-              className="w-5 text-center bg-transparent text-white font-mono outline-none"
+              className="w-5 text-center bg-transparent text-white font-mono outline-none text-xs"
             />
             <span className="text-zinc-500">/</span>
             <span className="text-zinc-400">{totalPages}</span>
           </div>
 
-          <div className="flex items-center gap-1 bg-[#2b2b2b] px-2 py-1 rounded border border-[#3e3e3e]">
+          <div className="hidden sm:flex items-center gap-1 bg-[#2b2b2b] px-2 py-0.5 rounded border border-[#3e3e3e]">
             <button
               onClick={() => setZoom((z) => Math.max(50, z - 10))}
               className="p-0.5 hover:text-white text-zinc-400"
@@ -67,7 +66,7 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({ docume
             >
               <ZoomOut className="w-3.5 h-3.5" />
             </button>
-            <span className="w-12 text-center font-mono text-[11px] text-zinc-200">{zoom}%</span>
+            <span className="w-10 text-center font-mono text-[11px] text-zinc-200">{zoom}%</span>
             <button
               onClick={() => setZoom((z) => Math.min(200, z + 10))}
               className="p-0.5 hover:text-white text-zinc-400"
@@ -93,16 +92,16 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({ docume
                 activeTab === 'text' ? 'bg-[#404040] text-white' : 'text-zinc-400 hover:text-white'
               }`}
             >
-              Extracted Text
+              Text
             </button>
           </div>
         </div>
 
         {/* Right: Actions & Close */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           <button
             onClick={handleRotate}
-            className="p-1.5 hover:bg-[#333] hover:text-white rounded text-zinc-400 transition-colors"
+            className="hidden sm:inline-flex p-1.5 hover:bg-[#333] hover:text-white rounded text-zinc-400 transition-colors"
             title="Rotate Clockwise"
           >
             <RotateCw className="w-4 h-4" />
@@ -116,14 +115,14 @@ export const DocumentViewerModal: React.FC<DocumentViewerModalProps> = ({ docume
           </button>
           <button
             onClick={handlePrint}
-            className="p-1.5 hover:bg-[#333] hover:text-white rounded text-zinc-400 transition-colors"
+            className="hidden sm:inline-flex p-1.5 hover:bg-[#333] hover:text-white rounded text-zinc-400 transition-colors"
             title="Print"
           >
             <Printer className="w-4 h-4" />
           </button>
           <button
             onClick={onClose}
-            className="p-1.5 hover:bg-red-500/20 hover:text-red-400 rounded text-zinc-400 transition-colors ml-2"
+            className="p-1.5 hover:bg-red-500/20 hover:text-red-400 rounded text-zinc-400 transition-colors ml-1"
             title="Close Viewer"
           >
             <X className="w-4 h-4" />

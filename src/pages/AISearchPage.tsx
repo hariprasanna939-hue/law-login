@@ -129,9 +129,9 @@ export const AISearchPage: React.FC = () => {
               <label className="block text-xs font-semibold text-zinc-700 mb-2">
                 Plot size
               </label>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
                 {/* Operator Dropdown */}
-                <div className="relative w-36">
+                <div className="relative flex-1 sm:w-36 sm:flex-none min-w-[120px]">
                   <select
                     value={sizeOperator}
                     onChange={(e) => setSizeOperator(e.target.value as any)}
@@ -151,11 +151,11 @@ export const AISearchPage: React.FC = () => {
                   placeholder="e.g. 2"
                   value={sizeValue}
                   onChange={(e) => setSizeValue(e.target.value)}
-                  className="w-24 px-3 py-2 rounded-xl border border-zinc-200 bg-white text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-900 shadow-2xs"
+                  className="w-20 sm:w-24 px-3 py-2 rounded-xl border border-zinc-200 bg-white text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-900 shadow-2xs"
                 />
 
                 {/* Unit Dropdown */}
-                <div className="relative w-28">
+                <div className="relative w-24 sm:w-28">
                   <select
                     value={sizeUnit}
                     onChange={(e) => setSizeUnit(e.target.value as any)}
