@@ -165,11 +165,11 @@ export const LegalAIPage: React.FC = () => {
               DUE DILIGENCE INTELLIGENCE
             </span>
             <span className="px-2 py-0.5 rounded-full bg-zinc-900 text-white text-[10px] font-semibold flex items-center gap-1">
-              <Sparkles className="w-2.5 h-2.5 text-amber-300" /> Legal AI
+              <Sparkles className="w-2.5 h-2.5 text-amber-300" /> Login AI
             </span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900">
-            Legal AI Intelligence Hub
+            Login AI Intelligence Hub
           </h1>
           <p className="text-xs text-zinc-500">
             Automated legal title auditing grounded in registered Bagasasanam, partition deeds, sale deeds, nil encumbrance certificates, and revenue extracts.

@@ -16,6 +16,7 @@ export const App: React.FC = () => {
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/land-legal" element={<LandLegalPage />} />
+            <Route path="/login-ai" element={<LegalAIPage />} />
             <Route path="/legal-ai" element={<LegalAIPage />} />
             <Route path="/ai-search" element={<AISearchPage />} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />

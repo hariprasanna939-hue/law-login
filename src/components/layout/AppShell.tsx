@@ -23,7 +23,8 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
       case '/land-legal':
         return 'Land & Legal';
       case '/legal-ai':
-        return 'Legal AI';
+      case '/login-ai':
+        return 'Login AI';
       case '/ai-search':
         return 'AI Search';
       default:
@@ -48,7 +49,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Land & Legal', path: '/land-legal' },
-    { name: 'Legal AI', path: '/legal-ai' },
+    { name: 'Login AI', path: '/login-ai' },
     { name: 'AI Search', path: '/ai-search' },
   ];
 
@@ -69,23 +70,11 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
         }`}
       >
         <div className="p-6">
-          {/* Logo & Identity */}
+          {/* Identity */}
           <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#c29a6b] flex items-center justify-center shadow-sm">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-5 h-5 text-white stroke-current fill-none"
-                  strokeWidth="6"
-                  strokeLinejoin="round"
-                >
-                  <path d="M 50 20 L 78 36 L 78 68 L 50 84 L 22 68 L 22 36 Z" />
-                  <path d="M 50 52 L 50 84 M 50 52 L 78 36 M 50 52 L 22 36" />
-                  <circle cx="50" cy="52" r="7" strokeWidth="4" />
-                </svg>
-              </div>
-              <span className="font-bold text-zinc-900 tracking-tight text-base">
-                Properties
+            <div className="flex items-center">
+              <span className="font-bold text-zinc-900 tracking-tight text-lg">
+                Login
               </span>
             </div>
             <button
@@ -154,7 +143,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
 
             {/* Breadcrumb Navigation */}
             <div className="flex items-center gap-2 text-xs font-medium text-zinc-500">
-              <span className="text-zinc-400">Properties</span>
+              <span className="text-zinc-400">Login</span>
               <span className="text-zinc-300">/</span>
               <span className="text-zinc-800 font-semibold">{getPageTitle()}</span>
             </div>

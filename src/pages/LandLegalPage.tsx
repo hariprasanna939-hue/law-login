@@ -39,7 +39,7 @@ export const LandLegalPage: React.FC = () => {
   };
 
   const handleTopLegalAi = () => {
-    navigate('/legal-ai');
+    navigate('/login-ai');
   };
 
   return (
@@ -87,14 +87,14 @@ export const LandLegalPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Legal AI button and Land Files Count */}
+        {/* Right: Login AI button and Land Files Count */}
         <div className="flex flex-col sm:items-end gap-1">
           <button
             onClick={handleTopLegalAi}
             className="self-start sm:self-auto px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-white rounded-full text-xs font-medium flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>Legal AI</span>
+            <span>Login AI</span>
           </button>
           <span className="text-[11px] text-zinc-400">
             {properties.length} of {properties.length} land files
@@ -158,12 +158,12 @@ export const LandLegalPage: React.FC = () => {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate(`/legal-ai?property=${property.id}`);
+                          navigate(`/login-ai?property=${property.id}`);
                         }}
                         className="px-2 py-0.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-[11px] font-medium transition-colors"
-                        title="Open Legal AI for this land"
+                        title="Open Login AI for this land"
                       >
-                        Legal AI
+                        Login AI
                       </button>
                     </>
                   )}
