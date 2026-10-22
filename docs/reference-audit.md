@@ -1,9 +1,9 @@
-# Reference Audit: AMI Properties Web Application
+# Reference Audit: Properties Web Application
 
 ## 1. Source Reference Summary
 
 - **Source Asset**: Google Meet Screen Recording (`Screen Recording 2026-10-22 at 5.05.38 PM.mov`), 345 seconds duration.
-- **Application Name**: AMI Properties (Land Management & Legal Due Diligence).
+- **Application Name**: Properties (Land Management & Legal Due Diligence).
 - **Primary Domain/Context**: Real estate land acquisition, title verification, legal due diligence of property deeds, power of attorney, partition deeds, legal heir certificates, and plain-language plot discovery.
 - **Observed Production URL in Video**: `advocatecasehub.vercel.app` (sharing context during call).
 
@@ -40,18 +40,18 @@
 
 ### Application Shell
 1. **Left Sidebar**:
-   - Top: AMI Properties logo (gold/bronze isometric cube within rounded-rect container) + "AMI Properties" bold wordmark.
+   - Top: Logo (gold/bronze isometric cube within rounded-rect container) + "Properties" bold wordmark.
    - Navigation Menu:
      - `Dashboard`
      - `Land & Legal` (Active pill: dark filled rectangle with rounded corners)
      - `AI Search`
    - Bottom Profile:
-     - User Name: `Advocate Mansoor`
+     - User Name: `Advocate`
      - Role: `Legal Advisor`
      - Sign Out link (`Sign out`)
 2. **Top Header**:
    - Sidebar toggle icon (`☰`)
-   - Breadcrumb navigation: `AMI Properties / [Active Page]`
+   - Breadcrumb navigation: `Properties / [Active Page]`
    - Right utility actions:
      - Information circular button (`i`)
      - PWA / App install button (`↓ Install App`)

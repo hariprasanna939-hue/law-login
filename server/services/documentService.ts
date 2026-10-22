@@ -60,7 +60,7 @@ export function updateDocumentStatus(
   id: string,
   status: 'Verified' | 'Needs rectification' | 'Awaiting review',
   comments?: string,
-  reviewerName: string = 'Advocate Mansoor'
+  reviewerName: string = 'Advocate'
 ): LegalDocument | undefined {
   const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
   const current = getDocumentById(id);
@@ -99,7 +99,7 @@ export function updateDocumentStatus(
 export function updateDocumentComments(
   id: string,
   comments: string,
-  reviewerName: string = 'Advocate Mansoor'
+  reviewerName: string = 'Advocate'
 ): LegalDocument | undefined {
   const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
   const updateStmt = db.prepare(`
@@ -119,7 +119,7 @@ export function updateDocumentComments(
 export function renameDocument(
   id: string,
   newTitle: string,
-  actorName: string = 'Advocate Mansoor'
+  actorName: string = 'Advocate'
 ): LegalDocument | undefined {
   const current = getDocumentById(id);
   if (!current) return undefined;
@@ -147,7 +147,7 @@ export function renameDocument(
 
 export function deleteDocument(
   id: string,
-  actorName: string = 'Advocate Mansoor'
+  actorName: string = 'Advocate'
 ): boolean {
   const current = getDocumentById(id);
   if (!current) return false;
@@ -166,7 +166,7 @@ export function deleteDocument(
 
 export function createShareLink(
   documentId: string,
-  createdByName: string = 'Advocate Mansoor',
+  createdByName: string = 'Advocate',
   expiresInHours: number = 48
 ): string {
   const token = crypto.randomBytes(24).toString('hex');

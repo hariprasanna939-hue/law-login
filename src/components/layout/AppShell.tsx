@@ -30,7 +30,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
   };
 
   const handleInstallApp = () => {
-    showToast('AMI Properties application is ready for offline PWA installation.');
+    showToast('Application is ready for offline PWA installation.');
   };
 
   const handleSignOut = async () => {
@@ -82,7 +82,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
                 </svg>
               </div>
               <span className="font-bold text-zinc-900 tracking-tight text-base">
-                AMI Properties
+                Properties
               </span>
             </div>
             <button
@@ -123,7 +123,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
         <div className="p-6 border-t border-zinc-100">
           <div className="mb-2">
             <h4 className="text-sm font-semibold text-zinc-900 tracking-tight">
-              Advocate Mansoor
+              Advocate
             </h4>
             <p className="text-xs text-zinc-400">Legal Advisor</p>
           </div>
@@ -151,7 +151,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
 
             {/* Breadcrumb Navigation */}
             <div className="flex items-center gap-2 text-xs font-medium text-zinc-500">
-              <span className="text-zinc-400">AMI Properties</span>
+              <span className="text-zinc-400">Properties</span>
               <span className="text-zinc-300">/</span>
               <span className="text-zinc-800 font-semibold">{getPageTitle()}</span>
             </div>
@@ -188,7 +188,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
           <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-zinc-200 shadow-xl animate-in fade-in zoom-in-95">
             <div className="flex items-center justify-between pb-3 border-b border-zinc-100 mb-4">
-              <h3 className="font-bold text-zinc-900 text-base">AMI Properties Legal Hub</h3>
+              <h3 className="font-bold text-zinc-900 text-base">Legal Hub</h3>
               <button
                 onClick={() => setInfoOpen(false)}
                 className="text-zinc-400 hover:text-zinc-600 p-1"
@@ -201,7 +201,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
                 <strong>Land Management & Legal Due Diligence Application</strong> recreates the verified interface for legal audit, document review, and plot plain-language discovery.
               </p>
               <p>
-                <strong>Active Advocate:</strong> Advocate Mansoor (Legal Advisor)
+                <strong>Active Advocate:</strong> Legal Advisor
               </p>
               <p>
                 <strong>Jurisdiction:</strong> Coimbatore District & Sub-Registrar Offices (Perur, Singanallur, Sulur, Kinathukadavu).

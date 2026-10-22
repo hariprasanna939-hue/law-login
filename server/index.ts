@@ -67,20 +67,20 @@ const upload = multer({
   },
 });
 
-// Authentication stub (matching Advocate Mansoor / Legal Advisor session)
+// Authentication stub (matching Advocate / Legal Advisor session)
 app.get('/api/auth/me', (_req, res) => {
   res.json({
     user: {
-      id: 'usr-mansoor',
-      name: 'Advocate Mansoor',
+      id: 'usr-advocate',
+      name: 'Advocate',
       role: 'Legal Advisor',
-      email: 'mansoor@amiproperties.com',
+      email: 'advocate@legalhub.com',
     },
   });
 });
 
 app.post('/api/auth/signout', (_req, res) => {
-  logAuditEvent('Advocate Mansoor', 'SIGN_OUT', 'user', 'usr-mansoor');
+  logAuditEvent('Advocate', 'SIGN_OUT', 'user', 'usr-advocate');
   res.json({ success: true, message: 'Signed out successfully' });
 });
 
@@ -153,7 +153,7 @@ app.patch('/api/properties/:id/status', (req, res) => {
     WHERE id = ?
   `);
   stmt.run(status, req.params.id);
-  logAuditEvent('Advocate Mansoor', 'UPDATE_PROPERTY_STATUS', 'property', req.params.id, { newStatus: status });
+  logAuditEvent('Advocate', 'UPDATE_PROPERTY_STATUS', 'property', req.params.id, { newStatus: status });
   const updated = db.prepare('SELECT * FROM properties WHERE id = ?').get(req.params.id);
   res.json(updated);
 });
@@ -185,7 +185,7 @@ app.post('/api/properties/:id/documents', upload.single('file'), (req, res) => {
       INSERT INTO legal_documents (
         id, property_id, title, original_filename, document_type, document_number,
         storage_key, file_size, mime_type, review_status, review_comments, reviewer_name, extracted_text
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'Awaiting review', '', 'Advocate Mansoor', ?)
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'Awaiting review', '', 'Advocate', ?)
     `);
 
     stmt.run(
@@ -201,7 +201,7 @@ app.post('/api/properties/:id/documents', upload.single('file'), (req, res) => {
       `Extracted content from ${req.file.originalname}`
     );
 
-    logAuditEvent('Advocate Mansoor', 'UPLOAD_DOCUMENT', 'legal_document', docId, {
+    logAuditEvent('Advocate', 'UPLOAD_DOCUMENT', 'legal_document', docId, {
       title: docTitle,
       filename: req.file.originalname,
       propertyId,
@@ -225,7 +225,7 @@ app.patch('/api/documents/:id/status', (req, res) => {
     req.params.id,
     status,
     comments,
-    reviewer_name || 'Advocate Mansoor'
+    reviewer_name || 'Advocate'
   );
 
   if (!updated) {
@@ -244,7 +244,7 @@ app.patch('/api/documents/:id/comments', (req, res) => {
   const updated = updateDocumentComments(
     req.params.id,
     comments,
-    reviewer_name || 'Advocate Mansoor'
+    reviewer_name || 'Advocate'
   );
 
   if (!updated) {
@@ -292,7 +292,7 @@ app.get('/api/documents/:id/download', (req, res) => {
     return res.status(404).json({ error: 'Stored document file not found on server' });
   }
 
-  logAuditEvent('Advocate Mansoor', 'DOWNLOAD_DOCUMENT', 'legal_document', doc.id, {
+  logAuditEvent('Advocate', 'DOWNLOAD_DOCUMENT', 'legal_document', doc.id, {
     filename: doc.original_filename,
   });
 
@@ -326,7 +326,7 @@ app.post('/api/documents/:id/share', (req, res) => {
     return res.status(404).json({ error: 'Document not found' });
   }
 
-  const token = createShareLink(doc.id, 'Advocate Mansoor', 48);
+  const token = createShareLink(doc.id, 'Advocate', 48);
   const shareUrl = `${req.protocol}://${req.get('host')}/shared/${token}`;
   res.json({ token, shareUrl, expires_in: '48 hours' });
 });
@@ -435,7 +435,7 @@ app.post('/api/properties/:id/legal-ai', async (req, res) => {
   }
 
   try {
-    const result = await askLegalAi(req.params.id, question.trim(), 'Advocate Mansoor');
+    const result = await askLegalAi(req.params.id, question.trim(), 'Advocate');
     res.json(result);
   } catch (err: any) {
     res.status(500).json({ error: err.message || 'Legal AI query failed' });
@@ -456,6 +456,6 @@ if (fs.existsSync(distDir)) {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORT, () => {
-    console.log(`AMI Properties Server running at http://localhost:${PORT}`);
+    console.log(`Properties Legal Server running at http://localhost:${PORT}`);
   });
 }

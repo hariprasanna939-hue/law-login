@@ -11,7 +11,7 @@ if (!fs.existsSync(dbDir)) {
   fs.mkdirSync(dbDir, { recursive: true });
 }
 
-const dbPath = path.join(dbDir, 'ami_properties.db');
+const dbPath = path.join(dbDir, 'properties.db');
 export const db = new Database(dbPath);
 
 // Enable foreign keys and WAL mode for reliability

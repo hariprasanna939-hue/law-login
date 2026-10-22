@@ -37,7 +37,7 @@ export const LandLegalPage: React.FC = () => {
   };
 
   const handleTopLegalAi = () => {
-    // Open the primary property's legal AI (Ami Perur Enclave or first available)
+    // Open the primary property's legal AI (Perur Enclave or first available)
     if (properties.length > 0) {
       const target = properties.find((p) => p.identifier === 'LND-26-00001') || properties[0];
       handleOpenProperty(target, true);

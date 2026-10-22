@@ -1,4 +1,4 @@
-# Module Implementation Plan: AMI Properties
+# Module Implementation Plan: Properties Land & Legal
 
 ## 1. Architecture Overview
 
@@ -11,7 +11,7 @@
   - Robust deterministic fallback when `GEMINI_API_KEY` is not provided:
     - Regex & rules-based natural-language plot query parser.
     - Grounded keyword/TF-IDF document search with structured legal chain templates.
-- **Authentication**: JWT/Session authentication with `Advocate Mansoor` (`Legal Advisor`) and admin roles, protected routes, and audit trails.
+- **Authentication**: JWT/Session authentication with `Advocate` (`Legal Advisor`) and admin roles, protected routes, and audit trails.
 
 ---
 

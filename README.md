@@ -1,6 +1,6 @@
-# AMI Properties — Land & Legal Due Diligence Application
+# Properties — Land & Legal Due Diligence Application
 
-Recreation of the AMI Properties web application based on the reference screen recording.
+Recreation of the web application based on the reference screen recording.
 
 ---
 
@@ -26,7 +26,7 @@ npm run dev
 ### 4. Build & Run in Production Mode
 ```bash
 npm run build
-npx tsx server/index.ts
+npm start
 ```
 Serves the full-stack app on `http://localhost:3001`.
 
@@ -40,10 +40,10 @@ npm test
 ## Implemented Modules
 
 1. **Application Shell & Design System**:
-   - Left Navigation Sidebar with AMI Properties gold cube branding.
+   - Left Navigation Sidebar with gold cube branding and `Properties` identity.
    - Dark filled active navigation pill (`Dashboard`, `Land & Legal`, `AI Search`).
-   - Profile Section with `Advocate Mansoor`, `Legal Advisor`, and `Sign out`.
-   - Top Header with Breadcrumbs (`AMI Properties / Land & Legal`), Info dialog, and `Install App`.
+   - Profile Section with `Advocate`, `Legal Advisor`, and `Sign out`.
+   - Top Header with Breadcrumbs (`Properties / Land & Legal`), Info dialog, and `Install App`.
    - Responsive drawer for mobile and tablet viewports.
 
 2. **Module A — Dashboard**:

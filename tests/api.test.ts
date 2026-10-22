@@ -7,17 +7,17 @@ beforeAll(() => {
   seedData();
 });
 
-describe('AMI Properties - API & Backend Integration Tests', () => {
+describe('Properties Legal - API & Backend Integration Tests', () => {
   it('GET /api/health returns 200 OK', async () => {
     const res = await request(app).get('/api/health');
     expect(res.status).toBe(200);
     expect(res.body.status).toBe('ok');
   });
 
-  it('GET /api/auth/me returns Advocate Mansoor profile', async () => {
+  it('GET /api/auth/me returns Advocate profile', async () => {
     const res = await request(app).get('/api/auth/me');
     expect(res.status).toBe(200);
-    expect(res.body.user.name).toBe('Advocate Mansoor');
+    expect(res.body.user.name).toBe('Advocate');
     expect(res.body.user.role).toBe('Legal Advisor');
   });
 
@@ -28,7 +28,7 @@ describe('AMI Properties - API & Backend Integration Tests', () => {
 
     const perur = res.body.find((p: any) => p.identifier === 'LND-26-00001');
     expect(perur).toBeDefined();
-    expect(perur.name).toBe('Ami Perur Enclave');
+    expect(perur.name).toBe('Perur Enclave');
     expect(perur.doc_count).toBe(16);
     expect(perur.verified_count).toBe(15);
 
@@ -41,7 +41,7 @@ describe('AMI Properties - API & Backend Integration Tests', () => {
     const res = await request(app).get('/api/properties?search=Perur');
     expect(res.status).toBe(200);
     expect(res.body.length).toBe(1);
-    expect(res.body[0].name).toBe('Ami Perur Enclave');
+    expect(res.body[0].name).toBe('Perur Enclave');
   });
 
   it('GET /api/properties/:id/documents returns files for property', async () => {
@@ -57,11 +57,11 @@ describe('AMI Properties - API & Backend Integration Tests', () => {
 
     const patchRes = await request(app)
       .patch(`/api/documents/${firstDoc.id}/status`)
-      .send({ status: 'Verified', comments: 'Title verified by Advocate Mansoor' });
+      .send({ status: 'Verified', comments: 'Title verified by Advocate' });
 
     expect(patchRes.status).toBe(200);
     expect(patchRes.body.review_status).toBe('Verified');
-    expect(patchRes.body.review_comments).toBe('Title verified by Advocate Mansoor');
+    expect(patchRes.body.review_comments).toBe('Title verified by Advocate');
   });
 
   it('PATCH /api/documents/:id/rename modifies title persistently', async () => {
@@ -146,7 +146,7 @@ describe('AMI Properties - API & Backend Integration Tests', () => {
       .send({ question: 'What is the name of the purchaser' });
 
     expect(res.status).toBe(200);
-    expect(res.body.answer).toContain('M/s. AMI PROPERTIES');
+    expect(res.body.answer).toContain('M/s. PROPERTIES');
     expect(res.body.answer).toContain('I. Abdul Rahman');
   });
 

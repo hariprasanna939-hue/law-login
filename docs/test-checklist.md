@@ -1,11 +1,11 @@
-# Testing Checklist: AMI Properties
+# Testing Checklist: Properties Land & Legal
 
 ## 1. Automated Test Plan
 
 ### Backend & API Tests
 - [ ] **Health & Status**: `/api/health` returns 200 OK.
 - [ ] **Authentication**:
-  - Sign in as `Advocate Mansoor` (`mansoor@amiproperties.com` or demo login).
+  - Sign in as `Advocate` (`advocate@legalhub.com` or demo login).
   - Unauthenticated access to protected routes returns 401.
   - Sign out invalidates session.
 - [ ] **Properties & Land Records**:
@@ -58,7 +58,7 @@
 
 ## 3. Visual & Interaction Fidelity Checklist
 
-- [ ] Top identity shows AMI Properties with golden isometric cube logo.
+- [ ] Top identity shows Properties with golden isometric cube logo.
 - [ ] Active navigation tab uses solid dark filled pill (`#18181b`).
 - [ ] Breadcrumb updates dynamically across routes.
 - [ ] Status badges match reference:

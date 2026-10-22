@@ -1,7 +1,7 @@
 {
-  "name": "ami-properties",
+  "name": "properties-legal",
   "version": "1.0.0",
-  "description": "AMI Properties — Land Management and Legal Due Diligence",
+  "description": "Land Management and Legal Due Diligence Application",
   "type": "module",
   "scripts": {
     "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"blue.bold,green.bold\" \"tsx watch server/index.ts\" \"vite\"",
@@ -10,6 +10,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "seed": "tsx server/seed.ts",
+    "start": "tsx server/index.ts",
     "test": "vitest run"
   },
   "dependencies": {

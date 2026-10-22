@@ -221,7 +221,7 @@ TEXT CORPUS:
 Sale Deed & Title Extract:
 Executed at SRO Coimbatore. Survey Field: SF 77, SF 76/2 Part.
 Extent: 0.30 Acre / Specified Cents.
-Purchasers: M/s. AMI PROPERTIES & Partners.
+Purchasers: M/s. PROPERTIES & Partners.
 Recitals verify chain of title from 1944 Partition Deed (Doc 770/1944) through 1984 Family Partition (Doc 41/1984).
 All encumbrances cleared via Revenue Resumption Order and registered release deeds.`}
             </pre>
