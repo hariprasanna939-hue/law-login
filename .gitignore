@@ -1,0 +1,8 @@
+node_modules/
+.npm-cache/
+dist/
+audit_*/
+reference_audit/live_assets/
+test_*.jpg
+.DS_Store
+*.log
