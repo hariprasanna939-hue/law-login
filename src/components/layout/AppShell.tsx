@@ -22,6 +22,8 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
         return 'Dashboard';
       case '/land-legal':
         return 'Land & Legal';
+      case '/legal-ai':
+        return 'Legal AI';
       case '/ai-search':
         return 'AI Search';
       default:
@@ -46,6 +48,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Land & Legal', path: '/land-legal' },
+    { name: 'Legal AI', path: '/legal-ai' },
     { name: 'AI Search', path: '/ai-search' },
   ];
 

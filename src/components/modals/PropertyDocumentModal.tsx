@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Upload, Sparkles, Check, AlertCircle, ArrowUpRight } from 'lucide-react';
+import { X, Upload, Sparkles, Check, AlertCircle, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { Property, LegalDocument, LegalAiQuery } from '../../types';
 import { api } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
@@ -462,14 +462,22 @@ export const PropertyDocumentModal: React.FC<PropertyDocumentModalProps> = ({
 
           {/* Section: LEGAL AI (Integrated in modal from reference crop_140s.jpg) */}
           <div id="legal-ai-section" className="pt-6 border-t border-zinc-200/80 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded-full bg-zinc-900 text-white text-[10px] font-bold tracking-wider uppercase flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-amber-300" />
-                LEGAL AI
-              </span>
-              <span className="text-xs font-semibold text-zinc-800">
-                Ask about these documents
-              </span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded-full bg-zinc-900 text-white text-[10px] font-bold tracking-wider uppercase flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-amber-300" />
+                  LEGAL AI
+                </span>
+                <span className="text-xs font-semibold text-zinc-800">
+                  Ask about these documents
+                </span>
+              </div>
+              <a
+                href={`/legal-ai?property=${property.id}`}
+                className="text-[11px] font-medium text-zinc-500 hover:text-zinc-900 flex items-center gap-1 transition-colors"
+              >
+                Dedicated Legal AI Hub <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
             <p className="text-[11px] text-zinc-400">Not a substitute for legal advice.</p>
 

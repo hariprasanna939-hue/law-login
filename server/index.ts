@@ -25,7 +25,7 @@ const __dirname = path.dirname(__filename);
 initDatabase();
 
 export const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
 app.use(cors());
 app.use(express.json());
@@ -455,7 +455,31 @@ if (fs.existsSync(distDir)) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  app.listen(PORT, () => {
+  const mainServer = app.listen(PORT, () => {
     console.log(`Properties Legal Server running at http://localhost:${PORT}`);
   });
+
+  mainServer.on('error', (err: any) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${PORT} in use, attempting fallback port...`);
+      const fallback = PORT === 3000 ? 3001 : 3000;
+      app.listen(fallback, () => {
+        console.log(`Properties Legal Server running at http://localhost:${fallback}`);
+      });
+    }
+  });
+
+  // Also bind to 3001 if primary is 3000, so both ports work simultaneously
+  if (PORT === 3000) {
+    try {
+      const s3001 = app.listen(3001, () => {
+        console.log(`Properties Legal Server also listening at http://localhost:3001`);
+      });
+      s3001.on('error', () => {
+        // Safe ignore if 3001 is already bound
+      });
+    } catch {
+      // Ignore
+    }
+  }
 }

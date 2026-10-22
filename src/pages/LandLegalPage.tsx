@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Sparkles, ChevronDown } from 'lucide-react';
 import { Property } from '../types';
 import { api } from '../services/api';
 import { PropertyDocumentModal } from '../components/modals/PropertyDocumentModal';
 
 export const LandLegalPage: React.FC = () => {
+  const navigate = useNavigate();
   const [properties, setProperties] = useState<Property[]>([]);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('All statuses');
@@ -37,11 +39,7 @@ export const LandLegalPage: React.FC = () => {
   };
 
   const handleTopLegalAi = () => {
-    // Open the primary property's legal AI (Perur Enclave or first available)
-    if (properties.length > 0) {
-      const target = properties.find((p) => p.identifier === 'LND-26-00001') || properties[0];
-      handleOpenProperty(target, true);
-    }
+    navigate('/legal-ai');
   };
 
   return (
@@ -158,7 +156,10 @@ export const LandLegalPage: React.FC = () => {
                       </span>
 
                       <button
-                        onClick={() => handleOpenProperty(property, true)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(`/legal-ai?property=${property.id}`);
+                        }}
                         className="px-2 py-0.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-[11px] font-medium transition-colors"
                         title="Open Legal AI for this land"
                       >
