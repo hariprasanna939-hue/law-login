@@ -51,8 +51,8 @@ export async function askLegalAi(
 | **28.06.1950** | Sale Deed | Doc No. 2510/1950 (Coimbatore DR) | Rangappa Gounder & Periya Gounder (Purchasers) | SF 77 (Joint purchase, later orally partitioned) |
 | **26.12.1971** | Death of Rangappa Gounder | Legal Heir Cert P.Mu. 30217/1992/A4 | Legal Heirs: **R. Venkatachalam** (Son), **R. Rangammal** (Daughter) | Deceased share in SF 77 |
 | **19.01.1984** | Partition Deed | Doc No. 41/1984 (Singanallur SRO) | R. Ramasamy & Family | 'B' Schedule: SF 76/2 part (0.30 Acre) allotted to **R. Ramasamy** |
-| **25.03.2022** | Sale Deed | Doc No. 5870/2022 & 5871/2022 | Vendors to M/s. PROPERTIES & A. Shajahan | Development property share |
-| **08.06.2023** | Sale Deed | Doc No. 7802/2023 | Co-owners to M/s. PROPERTIES | Complete consolidated title |
+| **25.03.2022** | Sale Deed | Doc No. 5870/2022 & 5871/2022 | Vendors to M/s. AMI PROPERTIES & A. Shajahan | Development property share |
+| **08.06.2023** | Sale Deed | Doc No. 7802/2023 | Co-owners to M/s. AMI PROPERTIES | Complete consolidated title |
 
 > **Note on title/heirship:** The recitals in Doc Nos. 5870/2022 and 5871/2022 acknowledge that an earlier 2010 transfer erroneously stated that **Rangammal** died leaving no heirs, whereas she left legal heirs (**Paramasivam** and **Manoharan**). Whether all legal heirs in the chain of title properly executed or released their rights for the entire property share is **worth verifying with your advocate**.`;
     } else {
@@ -80,14 +80,14 @@ export async function askLegalAi(
 
 | Document No. | Execution Date | Purchaser Name(s) |
 |---|---|---|
-| **5870/2022** (Sale Deed) | 25.03.2022 | **M/s. PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
-| **5871/2022** (Sale Deed) | 25.03.2022 | **M/s. PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
-| **7802/2023** (Sale Deed) | 08.06.2023 | **M/s. PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
+| **5870/2022** (Sale Deed) | 25.03.2022 | **M/s. AMI PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
+| **5871/2022** (Sale Deed) | 25.03.2022 | **M/s. AMI PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
+| **7802/2023** (Sale Deed) | 08.06.2023 | **M/s. AMI PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
 
-> **Summary:** The principal purchasers in all primary title deeds are **M/s. PROPERTIES** represented by managing partner **I. Abdul Rahman**, jointly with co-purchaser **A. Shajahan** represented by General Power of Attorney agent **A.R. Abuthahir**.`;
+> **Summary:** The principal purchasers in all primary title deeds are **M/s. AMI PROPERTIES** represented by managing partner **I. Abdul Rahman**, jointly with co-purchaser **A. Shajahan** represented by General Power of Attorney agent **A.R. Abuthahir**.`;
     } else {
       answer = `Based on the latest title deeds for **${property.name}**:
-- **Purchaser / Holder**: M/s. PROPERTIES
+- **Purchaser / Holder**: M/s. AMI PROPERTIES
 - **Authorized Representative**: Partner I. Abdul Rahman & General Power Agent A.R. Abuthahir
 - **Associated Power of Attorney**: Doc No. 4853/2026 registered at Perur SRO.`;
     }

@@ -110,7 +110,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
         <div className="p-6 border-t border-zinc-100">
           <div className="mb-2">
             <h4 className="text-sm font-semibold text-zinc-900 tracking-tight">
-              Advocate
+              Advocate Mansoor
             </h4>
             <p className="text-xs text-zinc-400">Legal Advisor</p>
           </div>

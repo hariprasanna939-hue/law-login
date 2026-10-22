@@ -69,12 +69,13 @@ const upload = multer({
 
 // Authentication stub (matching Advocate / Legal Advisor session)
 app.get('/api/auth/me', (_req, res) => {
+  const user = db.prepare('SELECT * FROM users LIMIT 1').get() as any;
   res.json({
-    user: {
-      id: 'usr-advocate',
-      name: 'Advocate',
+    user: user || {
+      id: 'usr-mansoor',
+      name: 'Advocate Mansoor',
       role: 'Legal Advisor',
-      email: 'advocate@legalhub.com',
+      email: 'mansoor@amiproperties.com',
     },
   });
 });

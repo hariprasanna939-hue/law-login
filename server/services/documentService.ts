@@ -60,7 +60,7 @@ export function updateDocumentStatus(
   id: string,
   status: 'Verified' | 'Needs rectification' | 'Awaiting review',
   comments?: string,
-  reviewerName: string = 'Advocate'
+  reviewerName: string = 'Advocate Mansoor'
 ): LegalDocument | undefined {
   const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
   const current = getDocumentById(id);
@@ -99,7 +99,7 @@ export function updateDocumentStatus(
 export function updateDocumentComments(
   id: string,
   comments: string,
-  reviewerName: string = 'Advocate'
+  reviewerName: string = 'Advocate Mansoor'
 ): LegalDocument | undefined {
   const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
   const updateStmt = db.prepare(`

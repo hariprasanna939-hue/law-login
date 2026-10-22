@@ -62,18 +62,18 @@ export function seedData() {
   const insertUser = db.prepare(`
     INSERT INTO users (id, name, email, role) VALUES (?, ?, ?, ?)
   `);
-  insertUser.run('usr-advocate', 'Advocate', 'advocate@legalhub.com', 'Legal Advisor');
-  insertUser.run('usr-admin', 'Admin', 'admin@legalhub.com', 'Administrator');
+  insertUser.run('usr-mansoor', 'Advocate Mansoor', 'mansoor@amiproperties.com', 'Legal Advisor');
+  insertUser.run('usr-admin', 'Admin', 'admin@amiproperties.com', 'Administrator');
 
   console.log('Seeding projects...');
   const insertProject = db.prepare(`
     INSERT INTO projects (id, name, code, location) VALUES (?, ?, ?, ?)
   `);
-  insertProject.run('prj-perur', 'Perur Enclave — phase 1', 'PRJ-PERUR', 'Perur, Coimbatore');
-  insertProject.run('prj-sulur', 'Sulur Land', 'PRJ-SULUR', 'Sulur, Coimbatore');
-  insertProject.run('prj-heritage', 'Heritage City', 'PRJ-HERITAGE', 'Singanallur, Coimbatore');
-  insertProject.run('prj-vishnu', 'Vishnu Land', 'PRJ-VISHNU', 'Kinathukadavu, Coimbatore');
-  insertProject.run('prj-ismail', 'Ismail Land', 'PRJ-ISMAIL', 'Pollachi Road, Coimbatore');
+  insertProject.run('prj-perur', 'Ami Perur Enclave — phase 1', 'PRJ-PERUR', 'Perur, Coimbatore');
+  insertProject.run('prj-sulur', 'Ami Sulur Land', 'PRJ-SULUR', 'Sulur, Coimbatore');
+  insertProject.run('prj-heritage', 'Ami Heritage City', 'PRJ-HERITAGE', 'Singanallur, Coimbatore');
+  insertProject.run('prj-vishnu', 'Ami Vishnu Land', 'PRJ-VISHNU', 'Kinathukadavu, Coimbatore');
+  insertProject.run('prj-ismail', 'Ami Ismail Land', 'PRJ-ISMAIL', 'Pollachi Road, Coimbatore');
 
   console.log('Seeding properties...');
   const insertProperty = db.prepare(`
@@ -85,7 +85,7 @@ export function seedData() {
     'prop-1',
     'prj-perur',
     'LND-26-00001',
-    'Perur Enclave',
+    'Ami Perur Enclave',
     'Perur, Coimbatore',
     'Broker — Satyaseelan',
     'Open',
@@ -95,7 +95,7 @@ export function seedData() {
     'prop-2',
     'prj-heritage',
     'LND-26-00002',
-    'Heritage City',
+    'Ami Heritage City',
     'Singanallur, Coimbatore',
     'Direct Owner',
     'Open',
@@ -105,7 +105,7 @@ export function seedData() {
     'prop-3',
     'prj-sulur',
     'LND-26-00003',
-    'Sulur Land',
+    'Ami Sulur Land',
     'Sulur, Coimbatore',
     'Broker — Ramanathan',
     'Open',
@@ -115,7 +115,7 @@ export function seedData() {
     'prop-4',
     'prj-ismail',
     'LND-26-00004',
-    'Ismail Land',
+    'Ami Ismail Land',
     'Pollachi Road, Coimbatore',
     'Broker — Satyaseelan',
     'Open',
@@ -125,7 +125,7 @@ export function seedData() {
     'prop-5',
     'prj-vishnu',
     'LND-26-00005',
-    'Vishnu Land',
+    'Ami Vishnu Land',
     'Kinathukadavu, Coimbatore',
     'Direct Owner',
     'Open',
@@ -360,11 +360,11 @@ export function seedData() {
     {
       id: 'doc-her-02',
       title: 'Layout pdf',
-      filename: 'HERITAGE CITY.pdf',
+      filename: 'AMI HERITAGE CITY.pdf',
       type: 'Layout Plan',
       status: 'Awaiting review',
       comments: '',
-      text: 'Detailed layout subdivision map for Heritage City.'
+      text: 'Detailed layout subdivision map for AMI Heritage City.'
     },
     {
       id: 'doc-her-03',
@@ -503,7 +503,7 @@ export function seedData() {
   insertAiQuery.run(
     'ai-q-1',
     'prop-2',
-    'Advocate',
+    'Advocate Mansoor',
     'Draw the ownership chain of this property as a flow chart, from the earliest document to the current owner, with the document number and date on each step.',
     `### Ownership / Title History Table
 
@@ -512,8 +512,8 @@ export function seedData() {
 | **28.06.1950** | Sale Deed | Doc No. 2510/1950 (Coimbatore DR) | Rangappa Gounder & Periya Gounder (Purchasers) | SF 77 (Joint purchase, later orally partitioned) |
 | **26.12.1971** | Death of Rangappa Gounder | Legal Heir Cert P.Mu. 30217/1992/A4 | Legal Heirs: **R. Venkatachalam** (Son), **R. Rangammal** (Daughter) | Deceased share in SF 77 |
 | **19.01.1984** | Partition Deed | Doc No. 41/1984 (Singanallur SRO) | R. Ramasamy & Family | 'B' Schedule: SF 76/2 part (0.30 Acre) allotted to **R. Ramasamy** |
-| **25.03.2022** | Sale Deed | Doc No. 5870/2022 & 5871/2022 | Vendors to M/s. PROPERTIES & A. Shajahan | Development property share |
-| **08.06.2023** | Sale Deed | Doc No. 7802/2023 | Co-owners to M/s. PROPERTIES | Complete consolidated title |
+| **25.03.2022** | Sale Deed | Doc No. 5870/2022 & 5871/2022 | Vendors to M/s. AMI PROPERTIES & A. Shajahan | Development property share |
+| **08.06.2023** | Sale Deed | Doc No. 7802/2023 | Co-owners to M/s. AMI PROPERTIES | Complete consolidated title |
 
 > **Note on title/heirship:** The recitals in Doc Nos. 5870/2022 and 5871/2022 acknowledge that an earlier 2010 transfer erroneously stated that **Rangammal** died leaving no heirs, whereas she left legal heirs (**Paramasivam** and **Manoharan**). Whether all legal heirs in the chain of title properly executed or released their rights for the entire property share is **worth verifying with your advocate**.`,
     '19 Oct'
@@ -522,17 +522,17 @@ export function seedData() {
   insertAiQuery.run(
     'ai-q-2',
     'prop-2',
-    'Advocate',
+    'Advocate Mansoor',
     'What is the name of the purchaser',
     `The provided sale deeds contain the following purchasers:
 
 | Document No. | Execution Date | Purchaser Name(s) |
 |---|---|---|
-| **5870/2022** (Sale Deed) | 25.03.2022 | **M/s. PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
-| **5871/2022** (Sale Deed) | 25.03.2022 | **M/s. PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
-| **7802/2023** (Sale Deed) | 08.06.2023 | **M/s. PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
+| **5870/2022** (Sale Deed) | 25.03.2022 | **M/s. AMI PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
+| **5871/2022** (Sale Deed) | 25.03.2022 | **M/s. AMI PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
+| **7802/2023** (Sale Deed) | 08.06.2023 | **M/s. AMI PROPERTIES** (represented by partner **I. Abdul Rahman**) and **A. Shajahan** (represented by GPA agent **A.R. Abuthahir**) |
 
-> **Summary:** The principal purchasers in all primary title deeds are **M/s. PROPERTIES** represented by managing partner **I. Abdul Rahman**, jointly with co-purchaser **A. Shajahan** represented by General Power of Attorney agent **A.R. Abuthahir**.`,
+> **Summary:** The principal purchasers in all primary title deeds are **M/s. AMI PROPERTIES** represented by managing partner **I. Abdul Rahman**, jointly with co-purchaser **A. Shajahan** represented by General Power of Attorney agent **A.R. Abuthahir**.`,
     '22 Oct'
   );
 
